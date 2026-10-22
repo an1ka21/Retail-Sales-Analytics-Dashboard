@@ -1,0 +1,2 @@
+row_count,distinct_stores,distinct_departments,distinct_dates,min_date,max_date,total_weekly_sales,avg_weekly_sales
+421570,45,81,143,2010-02-05,2012-10-26,6737218987.110066,15981.258123467198
