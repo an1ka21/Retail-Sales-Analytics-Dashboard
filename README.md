@@ -41,8 +41,6 @@ The following pipeline is fully implemented:
 	- Produces a claim-by-claim validation report against SQL outputs.
 
 ## Repository Structure
-```text
-## Repository Structure
 
 ```text
 retail-sales-analytics/
@@ -51,23 +49,21 @@ retail-sales-analytics/
 │   └── processed/
 │       ├── retail_sales_clean.csv            # Cleaned and merged sales dataset
 │       ├── retail_sales_powerbi.csv          # Dataset prepared for Power BI
-│       └── analysis/                         # CSV files containing SQL analysis results
+│       └── analysis/                         # SQL analysis result files
 ├── powerbi/
-│   ├── README.md                             # Information about the Power BI dashboard
+│   ├── README.md                             # Power BI dashboard information
 │   └── retail_sales_dashboard.pbix           # Interactive Power BI dashboard
 ├── python/
-│   ├── clean_data.py                         # Data cleaning and validation pipeline
-│   └── run_analysis.py                       # Runs SQL analysis and exports results
+│   ├── clean_data.py                         # Data cleaning and validation
+│   └── run_analysis.py                       # SQL analysis runner and exports
 ├── sql/
 │   └── analysis.sql                          # SQL queries for sales analysis
 ├── reports/
-│   ├── report_validation.md                  # Validates report claims against SQL results
+│   ├── report_validation.md                  # Report validation
 │   ├── retail_sales_business_findings.pdf    # Business findings report
-│   └── retail_sales_dashboard.pdf            # Exported Power BI dashboard
-├── README.md                                 # Project overview and setup instructions
+│   └── retail_sales_dashboard.pdf             # Dashboard PDF
+├── README.md                                 # Project overview and instructions
 └── requirements.txt                          # Python dependencies
-```
-
 ```
 
 ## Data Scope and Grain
