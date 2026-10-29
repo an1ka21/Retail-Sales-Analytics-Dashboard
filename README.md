@@ -42,23 +42,32 @@ The following pipeline is fully implemented:
 
 ## Repository Structure
 ```text
+## Repository Structure
+
+```text
 retail-sales-analytics/
 ├── data/
-│   ├── raw/                           # Input files (train, features, stores, test)
+│   ├── raw/                                  # Original input datasets
 │   └── processed/
-│       ├── retail_sales_clean.csv     # Clean merged analytical dataset
-│       ├── retail_sales_powerbi.csv   # Power BI-friendly companion dataset
-│       └── analysis/                  # SQL output tables as CSVs
+│       ├── retail_sales_clean.csv            # Cleaned and merged sales dataset
+│       ├── retail_sales_powerbi.csv          # Dataset prepared for Power BI
+│       └── analysis/                         # CSV files containing SQL analysis results
+├── powerbi/
+│   ├── README.md                             # Information about the Power BI dashboard
+│   └── retail_sales_dashboard.pbix           # Interactive Power BI dashboard
 ├── python/
-│   ├── clean_data.py                  # Data cleaning + validation pipeline
-│   ├── run_analysis.py                # DuckDB analysis runner + exports
-│   └── analysis.py                    # Reserved/legacy file (currently empty)
+│   ├── clean_data.py                         # Data cleaning and validation pipeline
+│   └── run_analysis.py                       # Runs SQL analysis and exports results
 ├── sql/
-│   └── analysis.sql                   # Documented SQL query set
+│   └── analysis.sql                          # SQL queries for sales analysis
 ├── reports/
-│   ├── retail_sales_findings.md       # Business findings report
-│   └── report_validation.md           # Audit of report claims vs SQL outputs
-└── README.md
+│   ├── report_validation.md                  # Validates report claims against SQL results
+│   ├── retail_sales_business_findings.pdf    # Business findings report
+│   └── retail_sales_dashboard.pdf            # Exported Power BI dashboard
+├── README.md                                 # Project overview and setup instructions
+└── requirements.txt                          # Python dependencies
+```
+
 ```
 
 ## Data Scope and Grain
@@ -72,11 +81,11 @@ retail-sales-analytics/
   - Date range: 2010-02-05 to 2012-10-26
 
 ## Tech Stack
-- Python (pandas)
-- DuckDB (SQL analytics)
-- Markdown reporting
-- Power BI (planned dashboarding)
-
+- Python (pandas) — data cleaning and validation
+- DuckDB — SQL-based data analysis
+- Power BI — interactive dashboard and DAX measures
+- Markdown — business reporting and documentation
+  
 ## Setup
 1. Clone the repository.
 2. Create and activate a virtual environment.
@@ -138,8 +147,11 @@ The pipeline includes explicit checks to avoid silent errors:
 If checks fail, scripts raise clear error messages instead of silently dropping or altering records.
 
 ## Business Findings Report
-Primary report:
-- reports/retail_sales_findings.md
+
+- [View Business Findings Report (PDF)](reports/retail_sales_business_findings.pdf)
+- [View Report Validation](reports/report_validation.md)
+
+The findings report summarizes key business insights and distinguishes descriptive comparisons from causal conclusions. The validation report checks numerical claims against SQL outputs.
 
 Independent claim audit:
 - reports/report_validation.md
@@ -154,10 +166,11 @@ From the current validated outputs:
 - Sales are concentrated in specific stores, store types, and department IDs.
 - Markdown fields contain substantial missingness, so markdown-based interpretation is treated cautiously.
 
-For full numbers and evidence, refer to:
-- data/processed/analysis/
-- reports/retail_sales_findings.md
-- reports/report_validation.md
+For full numbers and supporting evidence, refer to:
+
+- `data/processed/analysis/`
+- [Business Findings Report](reports/retail_sales_business_findings.pdf)
+- [Report Validation](reports/report_validation.md)
 
 ## Notes and Limitations
 - Department values are numeric IDs; no department-name mapping is assumed.
