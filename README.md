@@ -17,9 +17,11 @@ The project is designed for reproducibility and transparency:
 - Business findings are documented and independently audited against SQL outputs.
 
 ## Power BI Dashboard
-Power BI dashboard link (to be added once dashboard is published):
+An interactive, three-page Power BI dashboard is included in this project. It explores overall sales, store and department performance, holiday-week patterns, and markdown-data availability.
 
-- TBD
+- [View Dashboard PDF](reports/retail_sales_dashboard.pdf)
+- [View Business Findings Report](reports/retail_sales_business_findings.pdf)
+- [Power BI Dashboard File (.pbix)](powerbi/retail_sales_dashboard.pbix)
 
 ## What Has Been Done
 The following pipeline is fully implemented:
@@ -161,8 +163,3 @@ For full numbers and evidence, refer to:
 - Department values are numeric IDs; no department-name mapping is assumed.
 - Dataset is observational and aggregated weekly; it is not customer-level behavioral data.
 - Markdown missing values may represent different real-world states (no promo vs unknown), so they should not be interpreted naively.
-
-## Next Steps
-- Publish the Power BI dashboard and replace the placeholder link.
-- Add dashboard screenshots and usage notes.
-- Extend analysis with forecasting or causal methods if decision support requires effect estimation.
